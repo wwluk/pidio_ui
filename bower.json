@@ -1,8 +1,8 @@
 {
-  "name": "angular-seed",
-  "description": "A starter project for AngularJS",
-  "version": "0.0.0",
-  "homepage": "https://github.com/angular/angular-seed",
+  "name": "pidio_ui",
+  "description": "Pidio UI",
+  "version": "0.0.1",
+  "homepage": "https://bitbucket.org/wwluk/pidio_ui",
   "license": "MIT",
   "private": true,
   "dependencies": {
