@@ -8,6 +8,11 @@
         </div>
     </div>
     <div class="row">
+        <div class="col-md4">
+            <input ng-change="setVolume()" type ="range" min ="0" max="100" step ="1" ng-model="volume"/>
+        </div>
+    </div>
+    <div class="row">
         <pre>{{status}}</pre>
     </div>
 </div>
