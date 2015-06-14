@@ -1,1 +1,28 @@
-<p>This is the partial for view 1.</p>
+<div class="container">
+    <table class="table table-striped">
+        <tr>
+            <th>#</th>
+            <th>Radio</th>
+            <th>Actions</th>
+        </tr>
+        <tr ng-repeat="radio in playlist">
+            <td>{{radio.position}}</td>
+            <td>{{radio.value}}</td>
+            <td>
+                <button class="btn btn-success" ng-click="play(radio.position)">Play !!!</button>
+                <!--<button class="btn btn-warning">Remove</button>-->
+            </td>
+        </tr>
+    </table>
+
+
+    <form ng-submit="addRadio()">
+        <div class="form-group">
+            <label for="newRadioUri">New radio URI</label>
+            <input type="text" ng-model="enteredRadioUri" class="form-control" id="newRadioUri"
+                   placeholder="http://example.com:8080/radio"/>
+        </div>
+        <input type="submit" class="btn btn-primary" value="Add radio"/>
+    </form>
+</div>
+
