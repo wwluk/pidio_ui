@@ -1,6 +1,7 @@
 # PiDio UI
 
 This is a angular based GUI for PiDio project - internet radio.
+This project can cooperate with [PiDio](https://github.com/wwluk/pidio) which is REST interface for MPD management.
 
 ### Install Dependencies
 
