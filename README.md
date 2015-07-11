@@ -1,3 +1,5 @@
+[![Dependency Status](https://david-dm.org/wwluk/pidio_ui.svg)](https://david-dm.org/wwluk/pidio_ui)
+
 # PiDio UI
 
 This is a angular based GUI for PiDio project - internet radio.
