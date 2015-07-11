@@ -1,4 +1,5 @@
 [![Dependency Status](https://david-dm.org/wwluk/pidio_ui.svg)](https://david-dm.org/wwluk/pidio_ui)
+[![devDependency Status](https://david-dm.org/wwluk/pidio_ui/dev-status.svg)](https://david-dm.org/wwluk/pidio_ui#info=devDependencies)
 
 # PiDio UI
 
