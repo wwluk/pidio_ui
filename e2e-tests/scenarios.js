@@ -27,6 +27,23 @@ describe('my app', function() {
       response: {
         data: "volume: 42%   repeat: off   random: off   single: off   consume: off"
       }
+    },
+    {
+      request: {
+          path: 'http://172.16.0.74:8081/playlist',
+          method: 'GET'
+      },
+      response: {
+        data: {
+          "playlist": [{
+            "position": 1,
+            "value": "Radio 1"
+          }, {
+            "position": 2,
+            "value": "http://1.2.3.4/radio2"
+          }]
+        }
+      }
     }
 
   ]);
