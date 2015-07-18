@@ -4,6 +4,34 @@
 
 describe('my app', function() {
 
+  var mock = require('protractor-http-mock');
+  mock.config = {
+    rootDirectory: __dirname, // default value: process.cwd()
+    protractorConfig: 'protractor.conf.js' // default value: 'protractor.conf'
+  };
+
+  mock([{
+    request: {
+      path: 'http://172.16.0.74:8081/volume',
+      method: 'GET'
+    },
+    response: {
+      data: "50"
+    }
+  },
+    {
+      request: {
+        path: 'http://172.16.0.74:8081/status',
+        method: 'GET'
+      },
+      response: {
+        data: "volume: 42%   repeat: off   random: off   single: off   consume: off"
+      }
+    }
+
+  ]);
+
+
   browser.get('index.html');
 
   it('should automatically redirect to /basic when location hash/fragment is empty', function() {
