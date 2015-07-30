@@ -10,9 +10,11 @@ describe('my app', function() {
     protractorConfig: 'protractor.conf.js' // default value: 'protractor.conf'
   };
 
-  mock([{
+  var baseUrl = 'http://172.16.0.74:8081/';
+
+    mock([{
     request: {
-      path: 'http://172.16.0.74:8081/volume',
+      path: baseUrl + 'volume',
       method: 'GET'
     },
     response: {
@@ -21,7 +23,7 @@ describe('my app', function() {
   },
     {
       request: {
-        path: 'http://172.16.0.74:8081/status',
+        path: baseUrl + 'status',
         method: 'GET'
       },
       response: {
@@ -30,7 +32,7 @@ describe('my app', function() {
     },
     {
       request: {
-          path: 'http://172.16.0.74:8081/playlist',
+          path: baseUrl + 'playlist',
           method: 'GET'
       },
       response: {

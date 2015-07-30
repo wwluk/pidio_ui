@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('pidioApp.basic', ['ngRoute'])
+angular.module('pidioApp.basic', ['ngRoute', 'pidioApp.config'])
 
     .config(['$routeProvider', function($routeProvider) {
         $routeProvider.when('/basic', {
@@ -9,11 +9,9 @@ angular.module('pidioApp.basic', ['ngRoute'])
         });
     }])
 
-    .controller('BasicCtrl', ['$scope', '$http', function($scope, $http) {
-        var addr = 'http://172.16.0.74:8081';
-
+    .controller('BasicCtrl', ['$scope', '$http', 'BASE_URL', function($scope, $http, baseUrl) {
         $scope.simple = function(action) {
-            $http.get(addr + '/' + action).success(function (data) {
+            $http.get(baseUrl + '/' + action).success(function (data) {
                 $scope.action = action;
                 $scope.status = data;
             });
@@ -21,7 +19,7 @@ angular.module('pidioApp.basic', ['ngRoute'])
 
         $scope.setVolume = function() {
             var volume = $scope.volume;
-            $http.post(addr + '/volume/' + volume).success(function(data) {
+            $http.post(baseUrl + '/volume/' + volume,[]).success(function(data) {
                 $scope.action = "volume: " + volume
             })
         }
@@ -29,7 +27,7 @@ angular.module('pidioApp.basic', ['ngRoute'])
 
         $scope.simple('status');
 
-        $http.get(addr + '/volume').success(function(volume) {
+        $http.get(baseUrl + '/volume').success(function(volume) {
             $scope.volume = volume;
         })
 

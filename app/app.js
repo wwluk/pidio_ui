@@ -6,7 +6,8 @@ angular.module('pidioApp', [
   'pidioApp.basic',
   'pidioApp.view1',
   'pidioApp.view2',
-  'pidioApp.version'
+  'pidioApp.version',
+  'pidioApp.config'
 ]).
 config(['$routeProvider', function($routeProvider) {
   $routeProvider.otherwise({redirectTo: '/basic'});
