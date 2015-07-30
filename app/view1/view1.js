@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('pidioApp.view1', ['ngRoute'])
+angular.module('pidioApp.view1', ['ngRoute', 'pidioApp.config'])
 
     .config(['$routeProvider', function ($routeProvider) {
         $routeProvider.when('/view1', {
@@ -9,17 +9,15 @@ angular.module('pidioApp.view1', ['ngRoute'])
         });
     }])
 
-    .controller('View1Ctrl', ['$scope', '$http', function ($scope, $http) {
-        var addr = 'http://172.16.0.74:8081';
-
+    .controller('View1Ctrl', ['$scope', '$http', 'BASE_URL', function ($scope, $http, baseUrl) {
         $scope.getPlaylist = function () {
-            $http.get(addr + "/playlist").success(function (data) {
+            $http.get(baseUrl + "/playlist").success(function (data) {
                 $scope.playlist = data.playlist;
             })
         }
 
         $scope.play = function (position) {
-            $http.get(addr + "/play/" + position);
+            $http.get(baseUrl + "/play/" + position);
         }
 
         $scope.addRadio = function () {
@@ -27,7 +25,7 @@ angular.module('pidioApp.view1', ['ngRoute'])
             if (isEmpty(radioUri)) {
                 return;
             }
-            $http.post(addr + "/playlist/add", radioUri).success(function (data) {
+            $http.post(baseUrl + "/playlist/add", radioUri).success(function (data) {
                 $scope.enteredRadioUri = "";
                 $scope.getPlaylist();
             });
