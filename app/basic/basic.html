@@ -1,18 +1,22 @@
 <div class="container">
     <div class="row">
-        <div class="col-md-1"><button ng-click="simple('play')" class="btn btn-lg btn-success">Play</button></div>
-        <div class="col-md-1"><button ng-click="simple('stop')" class="btn btn-lg btn-danger">Stop</button></div>
-        <div class="col-md-1"><button ng-click="simple('status')" class="btn btn-lg btn-info">Status</button></div>
+        <div class="col-md-4">
+            <button ng-click="simple('play')" class="btn btn-lg btn-success">Play</button>
+            <button ng-click="simple('stop')" class="btn btn-lg btn-danger">Stop</button>
+            <button ng-click="simple('status')" class="btn btn-lg btn-info">Status</button>
+        </div>
         <div class="col-md-2">
             Last action: {{action}}
         </div>
     </div>
+
     <div class="row">
-        <div class="col-md4">
-            <input ng-change="setVolume()" type ="range" min ="0" max="100" step ="1" ng-model="volume"/>
+        <div class="col-md-12">
+            <input ng-change="setVolume()" type="range" min="0" max="100" step="1" ng-model="volume"/>
         </div>
     </div>
+
     <div class="row">
-        <pre>{{status}}</pre>
+        <pre class="col-md-12">{{status}}</pre>
     </div>
 </div>
